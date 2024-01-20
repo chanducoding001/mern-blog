@@ -4,7 +4,6 @@ const errorHandler = require("../utils/error");
 const signup = async (req,res,next)=>{
     const {username,email,password} = req.body;
     if(!username||!email||!password){
-        // return res.status(400).json({message:'All fields are required!'})
         const error = errorHandler(400, 'All Fields are required!');
         return next(error);
     }
